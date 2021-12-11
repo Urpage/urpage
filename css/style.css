@@ -53,7 +53,7 @@ header .navbar{
   margin: auto;
   width: 100%;
   padding: 20px 60px;
-  border-radius: 25px;
+  /* border-radius: 25px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -68,6 +68,7 @@ header .navbar{
     background-image: url(../img/URPAGE.png);
     background-size: 100%;
 }
+
 .logo:hover{
     width: 200px;
     height: 30px;
@@ -80,39 +81,40 @@ header .navbar{
   list-style: none;
   margin: 0 6px;
 }
-.navbar .menu a{
-  color: #000;
-  text-decoration: none;
-  font-size: 17px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  margin: 3px;
-}
-.navbar .menu a:hover{
-  color: #af24a4;
-}
-.navbar .menu a:hover::before{
-    content: "<";
-}
-.navbar .menu a:hover::after {
-    content: ">";
+
+.btn {
+    color: #000;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin: 3px;
+    padding: 7px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgb(0 0 0 / 15%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 12;
+    border-radius: 7px;
+    margin: auto;
+    margin-top: 10px;
 }
 
-.navbar .buttons input{
-  outline: none;
-  color: #f2f2f2;
-  font-size: 18px;
-  font-weight: 500;
-  border-radius: 12px;
-  padding: 5px 10px;
-  border: none;
-  margin: 10px 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background-image: linear-gradient( 135deg, #191919 10%, #af24a4 100%);
+.btn:hover {
+    background: #ff96f6;
+    color: white;
+  box-shadow:
+      inset 0 0 60px whitesmoke,
+      inset 200px 0 80px #f0f,
+      inset -200px 0 80px #0ff,
+      inset 200px 0 300px #f0f,
+      inset -20px 0 300px #0ff,
+      0 0 50px #fff,
+      -10px 0 80px #f0f,
+      10px 0 80px #0ff;
 }
-.navbar .buttons input:hover{
-  transform: scale(1.08);
+.pinkBtn {
+    background-color: #af24a334;
 }
 
 section .text-content{
@@ -206,7 +208,7 @@ section {
   
   
   .container .card .face.face1 .content{
-    opacity: .2;
+    opacity: .7;
     transition:  0.5s;
     text-align: center;
   }
@@ -251,59 +253,54 @@ section {
     font-size: 10pt;
     margin: 0 ;
     padding: 0;
-    color:#333;
   }
-  .focus {
-      color: #fff;
-      padding: 5px 10px;
-      margin-top: 15px;
-      font-size: 15px;
-      border-radius: 10px;
-      background-image: linear-gradient( 135deg, #191919 10%, #af24a4 100%);
-  }
-  
+
   .container .card .face.face2 .content a{
     text-decoration:none;
-    color: black;
     box-sizing: border-box;
-    outline : 1px dashed #333;
     padding: 5px;
     margin: 15px 0 0;
     display: inline-block;
   }
-  
+
   .container .card .face.face2 .content a:hover{
-    background: #333 ;
-    color: whitesmoke; 
-    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
+    box-shadow:
+      inset 0 0 60px whitesmoke,
+      inset 20px 0 80px #f0f,
+      inset -20px 0 80px #0ff,
+      inset 20px 0 300px #f0f,
+      inset -20px 0 300px #0ff,
+      0 0 50px #fff,
+      -10px 0 80px #f0f,
+      10px 0 80px #0ff;    
   }
   /* Contacts */
   #contacts .examples {
     align-items: center;
+  }
+.examples a:hover {
+    color: #6b0160;
   }
 .L {
     display: flex;
     font-size: 30px;
     align-items: center;
     vertical-align: middle;
-    color: #6b0160;
+    color: black
 }
-
+.L:hover {
+      color: #6b0160;;
+}
 .topBtn {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient( 135deg, #191919 10%, #af24a4 100%);
-    border-radius: 10px;
     width: 50px;
     height: 50px;
     position: fixed;
     top: 85%;
-    right: 5%;
+    right: 5.5%;
     z-index: 100;
-}
-.topBtn:hover {
-    transform: scale(1.2);
 }
 .topBtn a {
     color: #fff;
@@ -349,9 +346,15 @@ section {
 
 }
 @media (max-width:740px) {
+    .navbar a {
+        margin-top: 20px;
+    }
     .container .card{
         margin: auto;
       }
+    .navbar .menu a {
+        font-size: 10px;
+      }  
 }
 
 @media (max-width:410px) {
